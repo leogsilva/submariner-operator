@@ -181,6 +181,7 @@ func gatherDataByCluster(restConfig restConfig, directory string) {
 			}
 		}
 	}
+	gather.ClusterInformation(info)
 }
 
 func gatherConnectivity(dataType string, info gather.Info) bool {
