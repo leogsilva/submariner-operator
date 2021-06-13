@@ -164,7 +164,7 @@ func getTunnelPort(submariner *v1alpha1.Submariner, endpoint *subv1.Endpoint) (i
 	var tunnelPort int32
 	var err error
 	switch endpoint.Spec.Backend {
-	case "libreswan", "wireguard":
+	case "libreswan", "wireguard", "syntropy":
 		tunnelPort, err = endpoint.Spec.GetBackendPort(subv1.UDPPortConfig, int32(submariner.Spec.CeIPSecNATTPort))
 		if err != nil {
 			status.QueueWarningMessage(fmt.Sprintf("Error reading tunnelPort: %v", err))
